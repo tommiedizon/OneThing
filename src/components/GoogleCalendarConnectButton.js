@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignContent: 'space-between',
         alignItems: 'center',
-        gap: '15vw'
+        gap: '10px'
     },
     googleIcon: {
         padding: '10vw'
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 12,
+      paddingHorizontal: 10,
       borderWidth: 1,
       borderRadius: 25,
       borderColor: '#757575',
@@ -35,27 +36,19 @@ const styles = StyleSheet.create({
 
 // Connects to Google Calendar
 async function connectGoogleCalendar() {
-    GoogleSignin.configure({
-        scopes: ['https://www.googleapis.com/auth/calendar'], // what API you want to access on behalf of the user, default is email and profile
-        iosClientId: "845570352922-chd6r795jt4lk0mog8chvqvev5fhot7q.apps.googleusercontent.com"
-    });
-
     try {
-        const userInfo = await GoogleSignin.signIn();
-        const accessToken = (await GoogleSignin.getTokens()).accessToken;
+        // Sign user in and obtain access token
+        await GoogleSignin.signIn();
+        // const response = await fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList', {
+        //     headers: {
+        //         Authorization: `Bearer ${accessToken}`
+        //     }
+        // });
 
-        const response = await fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList', {
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        });
-        console.log(response.status)
-        const calendarData = await response.json();
-        console.log(calendarData);
+        // const calendarData = await response.json();
     } catch (error) {
         console.log(error);
     }
-    const userInfo = await GoogleSignin.signIn();
 }
 
 // Functional component
