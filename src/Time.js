@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, Text, View, Button, onChange } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default function App() {
+export default function Page() {
   return (
       <View style={styles.container}>
         <View style={styles.name}>
