@@ -8,7 +8,7 @@ export default function Page() {
   return (
       <View style={styles.container}>
         <View style={styles.name}>
-          <Text style={{ fontSize: '25px' }}>
+          <Text style={{ fontSize: 25 }}>
             <Text>Hi,</Text>
             <Text style={{ fontWeight: 'bold' }}>Tommie</Text>
           </Text>

@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, Text, View, Button, onPressLearnMore } from 'react-native';
 import EmojiSelector from 'react-native-emoji-selector'
 
-export default function App() {
+export default function Page() {
   return (
       <View style={styles.container}>
         <View style={styles.name}>
@@ -35,7 +35,6 @@ export default function App() {
       </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
