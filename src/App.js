@@ -1,8 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import GoogleCalendarConnectButton from './components/GoogleCalendarConnectButton';
-import GoogleCalendarDateTimePicker from './components/GoogleCalendarDateTimePicker';
 
 export default function App() {
 
@@ -15,7 +12,6 @@ export default function App() {
     <View style={styles.container}>
       <GoogleCalendarDateTimePicker/>
       <GoogleCalendarConnectButton />
-      <StatusBar style="auto" />
     </View>
   );
 }
@@ -27,4 +23,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  name: {
+    position: 'absolute',
+    top: 66,
+    left: 35
+  },
+  centerContent: {
+    flexDirection: 'column',
+    gap: 30
+  },
+  endButton: {
+    borderWidth: 1,
+    borderRadius: 20,
+    borderColor: '#232244',
+    width: 75,
+    height: 30,
+    justifyContent: 'center',
+    left: 140,
+    marginBottom: 10
+  }
 });
