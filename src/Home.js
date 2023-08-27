@@ -3,7 +3,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity, Image } from 'react-native';
 
-export default function App() {
+export default function Page() {
   return (
       <View style={styles.container}>
         <View style={styles.name}>
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#232244',
     justifyContent: 'center',
     alignItems: 'center',
-    top: 85
+    top: 100
   }
 });
