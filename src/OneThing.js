@@ -4,7 +4,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Input from './textInput';
 
-export default function Page() {
+export default function OneThing(props) {
+
+  const onPressLearnMore = () => {
+    props.navigation.navigate('EmojiSelector');
+  }
+
   return (
       <View style={styles.container}>
         <View style={styles.name}>
@@ -21,10 +26,10 @@ export default function Page() {
             <Text>you want to do?</Text>
           </Text>
           <Input />
-          <Icon style={{ marginTop: 50, fontSize: 50, textAlign: 'center' }} name='arrow-circle-right' />
+          <Button>
+            <Icon style={{ marginTop: 50, fontSize: 50, textAlign: 'center' }} name='arrow-circle-right' />
+          </Button>
         </View>
-
-        <StatusBar style="auto" />
       </View>
   );
 }

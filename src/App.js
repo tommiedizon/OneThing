@@ -6,6 +6,10 @@ import GoogleCalendarDateTimePicker from './components/GoogleCalendarDateTimePic
 import OneThing from './OneThing';
 import SignInScreen from './SignInScreen';
 
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
@@ -15,11 +19,12 @@ export default function App() {
   });
 
   return (
-    <View style={styles.container}>
-      <SignInScreen />
-      {/* <GoogleCalendarConnectButton />
-      <GoogleCalendarDateTimePicker /> */}
-    </View>
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="SignIn">
+          <Stack.Screen name="SignIn" component={SignInScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="OneThing" component={OneThing} options={{ headerShown: false }}  />
+        </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

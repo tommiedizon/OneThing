@@ -35,24 +35,36 @@ const styles = StyleSheet.create({
 });
 
 // Connects to Google Calendar
-async function connectGoogleCalendar() {
-    try {
-        // Sign user in and obtain access token
-        await GoogleSignin.signIn();
-        // const response = await fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList', {
-        //     headers: {
-        //         Authorization: `Bearer ${accessToken}`
-        //     }
-        // });
+// async function connectGoogleCalendar() {
+//     try {
+//         // Sign user in and obtain access token
+//         await GoogleSignin.signIn();
+//         navigation.navigate('OneThing');
+//         // const response = await fetch('https://www.googleapis.com/calendar/v3/users/me/calendarList', {
+//         //     headers: {
+//         //         Authorization: `Bearer ${accessToken}`
+//         //     }
+//         // });
 
-        // const calendarData = await response.json();
-    } catch (error) {
-        console.log(error);
-    }
-}
+//         // const calendarData = await response.json();
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 // Functional component
-export default function GoogleCalendarConnectButton() {
+export default function GoogleCalendarConnectButton(props) {
+
+    const connectGoogleCalendar = async function() {
+        try {
+            // Sign user in and obtain access token
+            await GoogleSignin.signIn();
+            props.nav.navigate('OneThing');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <View style={styles.componentWrapper}>
             <TouchableHighlight underlayColor="#DDDDDD" style={styles.button} onPress={connectGoogleCalendar}>
