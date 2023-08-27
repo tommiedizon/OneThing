@@ -5,6 +5,9 @@ import GoogleCalendarConnectButton from './components/GoogleCalendarConnectButto
 import GoogleCalendarDateTimePicker from './components/GoogleCalendarDateTimePicker';
 import OneThing from './OneThing';
 import SignInScreen from './SignInScreen';
+import Emoji from './Emoji';
+import Time from './Time';
+import Home from './Home';
 
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -23,6 +26,9 @@ export default function App() {
         <Stack.Navigator initialRouteName="SignIn">
           <Stack.Screen name="SignIn" component={SignInScreen} options={{ headerShown: false }} />
           <Stack.Screen name="OneThing" component={OneThing} options={{ headerShown: false }}  />
+          <Stack.Screen name="EmojiSelector" component={Emoji} options={{ headerShown: false }}  />
+          <Stack.Screen name="Scheduler" component={Time} options={{ headerShown: false }}  />
+          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}  />
         </Stack.Navigator>
     </NavigationContainer>
   );

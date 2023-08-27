@@ -1,12 +1,13 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import Input from './textInput';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function OneThing(props) {
 
-  const onPressLearnMore = () => {
+  const proceed = () => {
     props.navigation.navigate('EmojiSelector');
   }
 
@@ -26,9 +27,16 @@ export default function OneThing(props) {
             <Text>you want to do?</Text>
           </Text>
           <Input />
-          <Button>
-            <Icon style={{ marginTop: 50, fontSize: 50, textAlign: 'center' }} name='arrow-circle-right' />
-          </Button>
+          {/* <Button onPress={proceed}> */}
+          <Pressable onPress={proceed}>
+            <View>
+              <Icon style={{ marginTop: 50, fontSize: 50, textAlign: 'center' }} name='arrow-circle-right' />
+            </View>
+          </Pressable>
+            {/* <View>
+              <Icon style={{ marginTop: 50, fontSize: 50, textAlign: 'center' }} name='arrow-circle-right' />
+            </View> */}
+          {/* </Button> */}
         </View>
       </View>
   );

@@ -4,7 +4,11 @@ import { StyleSheet, Text, View, Button, onPressLearnMore } from 'react-native';
 import EmojiSelector from 'react-native-emoji-selector';
 
 
-export default function Page(props) {
+export default function Emoji(props) {
+  const onPressLearnMore = () => {
+    props.navigation.navigate('Scheduler');
+  }
+
   return (
       <View style={styles.container}>
         <View style={styles.name}>
