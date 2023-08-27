@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity, Image } from 'react-native';
 
 export default function App() {
   return (
@@ -10,6 +10,11 @@ export default function App() {
           <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Today</Text>
           <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Sat, Aug 26</Text>
         </View>
+
+        {/* <Image
+          style={styles.tinyLogo}
+          source={require('../assets/Tommie.JPEG')}
+        /> */}
 
         <View style={styles.endButton}>
           <TouchableOpacity style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'center' }}>
@@ -51,11 +56,15 @@ export default function App() {
 
         <View style={styles.menuBar}>
           <View style={{ flexDirection: 'row', gap: 80, alignItems: 'center'}}>
-            <View style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
+            <TouchableOpacity style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
               <FontAwesomeIcon style={{ fontSize: 35, width: 35, color: '#232244' }} name='home'/>
-            </View>
-            <IonIcon style={{ fontSize: 35, color: 'white' }} name='journal' />
-            <IonIcon style={{ fontSize: 35, color: 'white' }} name='settings-sharp' />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <IonIcon style={{ fontSize: 35, color: 'white' }} name='journal' />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <IonIcon style={{ fontSize: 35, color: 'white' }} name='settings-sharp' />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
