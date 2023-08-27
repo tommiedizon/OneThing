@@ -4,19 +4,23 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@react-icons/all-files": "^4.1.0",
-    "@react-native-community/datetimepicker": "^7.4.2",
+    "@google-cloud/local-auth": "^2.1.0",
+    "@react-native-google-signin/google-signin": "^10.0.1",
+    "@react-oauth/google": "^0.11.1",
+    "dotenv": "^16.3.1",
     "expo": "~49.0.8",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^105.0.0",
+    "moment": "^2.29.4",
+    "path": "^0.12.7",
+    "process": "^0.11.10",
     "react": "18.2.0",
     "react-countup": "^6.4.2",
     "react-icons": "^4.10.1",
@@ -26,6 +30,17 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
+  },
+  "expo": {
+    "android": {
+      "googleServicesFile": "./google-services.json"
+    },
+    "ios": {
+      "googleServicesFile": "./GoogleService-Info.plist"
+    },
+    "plugins": [
+      "@react-native-google-signin/google-signin"
+    ]
   },
   "private": true
 }

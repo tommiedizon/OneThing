@@ -1,59 +1,18 @@
-import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+
+  GoogleSignin.configure({
+    scopes: ['https://www.googleapis.com/auth/calendar'], // what API you want to access on behalf of the user, default is email and profile
+    iosClientId: "845570352922-chd6r795jt4lk0mog8chvqvev5fhot7q.apps.googleusercontent.com"
+  });
+
   return (
-      <View style={styles.container}>
-        <View style={styles.name}>
-          <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Today</Text>
-          <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Sat, Aug 26</Text>
-        </View>
-
-        <View style={styles.endButton}>
-          <TouchableOpacity style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'center' }}>
-            <Icon style={{ fontSize: 20, alignContent: 'center', justifyContent: 'center', marginRight: 5 }} name='close'/>
-            <Text style={{ color:"#232244", fontSize: 15 }}>End</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ height: 480, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10 }}>
-          <View style={styles.centerContent}>
-            <Text style={{ fontSize: 25, width: 250, textAlign: 'center' }}>
-              <Text>Tommie's </Text>
-              <Text style={{ fontWeight: 'bold' }}>OneThing </Text>
-              <Text style={{ fontSize: 20, color: '#757575' }}>for Sun, Aug 27</Text>
-            </Text>
-            <View
-              style = {{
-                borderRadius: 125,
-                width: 250,
-                height: 250,
-                borderColor: 'black',
-                borderWidth: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Text style={{ textAlign: 'center', fontSize: 100 }}>&#x1F3C0;</Text>
-              <Text style={{ fontSize: 20 }}>Basketball</Text>
-            </View>
-            <View style={{ borderWidth: 1, borderRadius: 20, backgroundColor: '#232244', width: 235 }}>
-              <Button
-                onPress={onPressLearnMore}
-                title="One done!"
-                color="white"
-              />
-            </View>
-          </View>
-        </View>
-
-        {/* <View style={{ width: 358, height: 77, borderRadius: 40, backgroundColor: '#232244', alignItems: 'center' }}>
-          <View style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignContent: 'center', justifyContent: 'center'}}>
-            <Icon style={{ fontSize: 35, color: '#232244', backgroundColor: 'red', alignItems: 'center'}} name='home'/>
-          </View>
-        </View> */}
-      </View>
+    <View style={styles.container}>
+      <GoogleCalendarDateTimePicker/>
+      <GoogleCalendarConnectButton />
+    </View>
   );
 }
 
