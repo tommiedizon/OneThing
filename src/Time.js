@@ -1,9 +1,9 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, Text, View, Button, onChange } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import GoogleCalendarDateTimePicker from './components/GoogleCalendarDateTimePicker';
 
-export default function Page() {
+export default function Scheduler(props) {
   return (
       <View style={styles.container}>
         <View style={styles.name}>
@@ -23,8 +23,7 @@ export default function Page() {
           </Text>
 
           {/* Date time picker here */}
-
-          <Icon style={{ marginTop: 50, fontSize: 50, textAlign: 'center' }} name='arrow-circle-right' />
+          <GoogleCalendarDateTimePicker navigation={props.navigation}/>
         </View>
       </View>
   );

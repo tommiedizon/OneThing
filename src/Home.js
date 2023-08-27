@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity } from 'react-native';
 
-export default function App() {
+export default function Home() {
   return (
       <View style={styles.container}>
         <View style={styles.name}>
@@ -47,12 +47,6 @@ export default function App() {
             </View>
           </View>
         </View>
-
-        {/* <View style={{ width: 358, height: 77, borderRadius: 40, backgroundColor: '#232244', alignItems: 'center' }}>
-          <View style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignContent: 'center', justifyContent: 'center'}}>
-            <Icon style={{ fontSize: 35, color: '#232244', backgroundColor: 'red', alignItems: 'center'}} name='home'/>
-          </View>
-        </View> */}
       </View>
   );
 }

@@ -1,9 +1,14 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, Text, View, Button, onPressLearnMore } from 'react-native';
-import EmojiSelector from 'react-native-emoji-selector'
+import EmojiSelector from 'react-native-emoji-selector';
 
-export default function Page() {
+
+export default function Emoji(props) {
+  const onPressLearnMore = () => {
+    props.navigation.navigate('Scheduler');
+  }
+
   return (
       <View style={styles.container}>
         <View style={styles.name}>
