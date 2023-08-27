@@ -1,5 +1,6 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity } from 'react-native';
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
 
         <View style={styles.endButton}>
           <TouchableOpacity style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'center' }}>
-            <Icon style={{ fontSize: 20, alignContent: 'center', justifyContent: 'center', marginRight: 5 }} name='close'/>
+            <FontAwesomeIcon style={{ fontSize: 20, alignContent: 'center', justifyContent: 'center', marginRight: 5 }} name='close'/>
             <Text style={{ color:"#232244", fontSize: 15 }}>End</Text>
           </TouchableOpacity>
         </View>
@@ -48,11 +49,15 @@ export default function App() {
           </View>
         </View>
 
-        {/* <View style={{ width: 358, height: 77, borderRadius: 40, backgroundColor: '#232244', alignItems: 'center' }}>
-          <View style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignContent: 'center', justifyContent: 'center'}}>
-            <Icon style={{ fontSize: 35, color: '#232244', backgroundColor: 'red', alignItems: 'center'}} name='home'/>
+        <View style={styles.menuBar}>
+          <View style={{ flexDirection: 'row', gap: 80, alignItems: 'center'}}>
+            <View style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon style={{ fontSize: 35, width: 35, color: '#232244' }} name='home'/>
+            </View>
+            <IonIcon style={{ fontSize: 35, color: 'white' }} name='journal' />
+            <IonIcon style={{ fontSize: 35, color: 'white' }} name='settings-sharp' />
           </View>
-        </View> */}
+        </View>
       </View>
   );
 }
@@ -82,5 +87,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     left: 140,
     marginBottom: 10
+  },
+  menuBar: {
+    width: 358,
+    height: 77,
+    borderRadius: 40,
+    backgroundColor: '#232244',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 85
   }
 });
