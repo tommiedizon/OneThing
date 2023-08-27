@@ -5,7 +5,7 @@ import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-goo
 // Component styles
 const styles = StyleSheet.create({
     componentWrapper: {
-        width: '75%'
+        width: '85%'
     },
     buttonContentsWrapper: {
         display: 'flex',
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignContent: 'space-between',
         alignItems: 'center',
-        gap: '10px'
+        gap: 10
     },
     googleIcon: {
         padding: '10vw'
