@@ -6,61 +6,57 @@ import { StyleSheet, Text, View, Button, onPressLearnMore, TouchableOpacity, Ima
 export default function Page() {
   return (
       <View style={styles.container}>
+        <View style={styles.name}>
+          <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Today</Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Sat, Aug 26</Text>
+        </View>
+
+          {/* <Image source={require('.././assets/Tommie.png')} style={{ height: 60, width: 60, borderRadius: 30 }}/> */}
+          <View style={styles.endButton}>
+            <TouchableOpacity style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'center' }}>
+              <FontAwesomeIcon style={{ fontSize: 20, alignContent: 'center', justifyContent: 'center', marginRight: 5 }} name='close'/>
+              <Text style={{ color:"#232244", fontSize: 15 }}>End</Text>
+            </TouchableOpacity>
+          </View>
+
+        <View style={{ height: 480, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10 }}>
           <View style={styles.centerContent}>
-            <Text style={{ fontWeight: 'bold', fontSize: 25 }}>Tommie's Diary</Text>
-            <View style={{ height: 100, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10, flexDirection: 'row', gap: 35 }}>
-              <Text style={{ textAlign: 'center', fontSize: 50 }}>&#x1F3C0;</Text>
+            <Text style={{ fontSize: 25, width: 250, textAlign: 'center' }}>
+              <Text>Tommie's </Text>
+              <Text style={{ fontWeight: 'bold' }}>OneThing </Text>
+              <Text style={{ fontSize: 20, color: '#757575' }}>for Sun, Aug 27</Text>
+            </Text>
+            <View
+              style = {{
+                borderRadius: 125,
+                width: 250,
+                height: 250,
+                borderColor: 'black',
+                borderWidth: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Text style={{ textAlign: 'center', fontSize: 100 }}>&#x1F3C0;</Text>
               <Text style={{ fontSize: 20 }}>Basketball</Text>
-              <Text>
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>4 </Text>
-                <Text style={{ fontSize: 20 }}>weeks</Text>
-              </Text>
             </View>
-
-            <View style={{ height: 100, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10, flexDirection: 'row', gap: 35 }}>
-              <Text style={{ textAlign: 'center', fontSize: 50 }}>&#x1F436;</Text>
-              <Text style={{ fontSize: 20 }}>Walk Tank</Text>
-              <Text>
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>6 </Text>
-                <Text style={{ fontSize: 20 }}>weeks</Text>
-              </Text>
-            </View>
-
-            <View style={{ height: 100, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10, flexDirection: 'row', gap: 35 }}>
-              <Text style={{ textAlign: 'center', fontSize: 50 }}>&#x1F3AE;</Text>
-              <Text style={{ fontSize: 20 }}>Gaming</Text>
-              <Text>
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>1 </Text>
-                <Text style={{ fontSize: 20 }}>week</Text>
-              </Text>
-            </View>
-
-            <View style={{ height: 100, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10, flexDirection: 'row', gap: 35 }}>
-              <Text style={{ textAlign: 'center', fontSize: 50 }}>&#x1F373;</Text>
-              <Text style={{ fontSize: 20 }}>Cook</Text>
-              <Text>
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>4 </Text>
-                <Text style={{ fontSize: 20 }}>weeks</Text>
-              </Text>
-            </View>
-
-            <View style={{ height: 100, width: 358, alignItems: 'center', backgroundColor: 'white', justifyContent: 'center', borderRadius: 13, shadowColor: '#757575', shadowRadius: 10, shadowOpacity: 0.5, shadowOffset: 10, flexDirection: 'row', gap: 35 }}>
-              <Text style={{ textAlign: 'center', fontSize: 50 }}>&#x1F3CB;</Text>
-              <Text style={{ fontSize: 20 }}>Gym</Text>
-              <Text>
-                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>10 </Text>
-                <Text style={{ fontSize: 20 }}>weeks</Text>
-              </Text>
+            <View style={{ borderWidth: 1, borderRadius: 20, backgroundColor: '#232244', width: 235 }}>
+              <Button
+                onPress={onPressLearnMore}
+                title="One done!"
+                color="white"
+              />
             </View>
           </View>
+        </View>
 
         <View style={styles.menuBar}>
           <View style={{ flexDirection: 'row', gap: 80, alignItems: 'center'}}>
-            <TouchableOpacity>
-              <FontAwesomeIcon style={{ fontSize: 35, width: 35, color: 'white' }} name='home'/>
-            </TouchableOpacity>
             <TouchableOpacity style={{ backgroundColor: 'white', height: 50, width: 50, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
-              <IonIcon style={{ fontSize: 35, color: '#232244' }} name='journal' />
+              <FontAwesomeIcon style={{ fontSize: 35, width: 35, color: '#232244' }} name='home'/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <IonIcon style={{ fontSize: 35, color: 'white' }} name='journal' />
             </TouchableOpacity>
             <TouchableOpacity>
               <IonIcon style={{ fontSize: 35, color: 'white' }} name='settings-sharp' />
@@ -76,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   name: {
     position: 'absolute',
@@ -85,9 +81,7 @@ const styles = StyleSheet.create({
   },
   centerContent: {
     flexDirection: 'column',
-    gap: 20,
-    alignItems: 'center',
-    justifyContent: 'center'
+    gap: 30
   },
   endButton: {
     borderWidth: 1,
@@ -106,6 +100,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#232244',
     justifyContent: 'center',
     alignItems: 'center',
-    top: 45,
+    top: 100
   }
 });

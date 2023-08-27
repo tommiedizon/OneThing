@@ -11,10 +11,7 @@ export default function Page() {
           <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Sat, Aug 26</Text>
         </View>
 
-        {/* <Image
-          style={styles.tinyLogo}
-          source={require('../assets/Tommie.JPEG')}
-        /> */}
+        <Image source={require('./assets/Tommie.JPEG')} style={styles.image} />
 
         <View style={styles.endButton}>
           <TouchableOpacity style={{ flexDirection: 'row', alignContent: 'center', justifyContent: 'center' }}>
